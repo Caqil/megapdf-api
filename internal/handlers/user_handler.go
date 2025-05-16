@@ -23,8 +23,8 @@ func NewUserHandler(service *services.UserService) *UserHandler {
 // @Tags users
 // @Accept json
 // @Produce json
-// @Param user body models.User true "User data"
-// @Success 201 {object} models.User
+// @Param user body models.SwaggerUser true "User data"
+// @Success 201 {object} models.SwaggerUser
 // @Failure 400 {object} map[string]string
 // @Failure 500 {object} map[string]string
 // @Security BearerAuth

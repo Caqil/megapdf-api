@@ -3,8 +3,9 @@ package main
 import (
 	"log"
 
+	"github.com/Caqil/megapdf-api/cmd/api/docs"
+	_ "github.com/Caqil/megapdf-api/cmd/api/docs"
 	"github.com/Caqil/megapdf-api/internal/config"
-	"github.com/Caqil/megapdf-api/internal/docs"
 	"github.com/Caqil/megapdf-api/internal/routes"
 	"github.com/gin-gonic/gin"
 
@@ -29,6 +30,7 @@ func main() {
 	docs.SwaggerInfo.Version = "1.0"
 	docs.SwaggerInfo.Host = "localhost:8080"
 	docs.SwaggerInfo.BasePath = "/api"
+	docs.SwaggerInfo.Schemes = []string{"http"}
 	r.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 
 	// Setup routes
